@@ -1,0 +1,615 @@
+/*
+ *  TUCSS: Thunderbird Useability CSS
+ *  
+ *  The purpose of this mess of CSS is to provide a consistent user interface
+ *  for the desktop user. For many years now, different operating systems have
+ *  all provided means for the user to change her desktop to suit her needs. If
+ *  she wants it in barbie pink, then so be it. If she wants it in high-contrast
+ *  black and yellow, that's fine too. If she wants it in soothing low-contrast
+ *  colors, then she's like me and she's quite tired of application devs hard-coding
+ *  garish colors and heaps of white just because it works for a lot of people out
+ *  there. This file should be placed in your Thunderbird profile, under a directory
+ *  named "chrome", which won't exist by default. On WinXP/2000, that could be:
+ *  C:\Documents and Settings\<username>\Application Data\Thunderbird\Profiles\<profile name>\chrome
+ *  (assuming, of course, that you have a fairly standard windows installation). Under Linux,
+ *  that would probably be:
+ *  /home/<username>/.mozilla/thunderbird/Profiles/<profile name>/chrome
+ *  (again, assuming a fairly standard installation)
+ *
+ *  This CSS is probably incomplete and definitely can't cater for absolutely
+ *  everyone -- if you set your desktop up in shades of red, for example, then
+ *  one of the Lightning text colors below won't work -- but the (very few) actual
+ *  colors that are coded in here are marked with MYPREF. Search for that and replace
+ *  colors as needs be. On the whole though, this CSS should be more universally
+ *  applicable than the colors that it overrides.
+ *
+ *  Licensing, etc:
+ *  This CSS is released under the very liberal BSD license. You may basically do
+ *  whatever you want with it except claim it is your own, thereby making women,
+ *  flashy cars and barrels of money gravitate towards you. You are more than
+ *  welcome to modify it and send me patches: if you can add css which helps
+ *  TB to be more consistent with the rest of the desktop, then, by all means, add it!
+ *
+ *  This css was originally born out of a desire to make Lightning more usable
+ *  on my low-contrast theme and just grew as I found other annoyances with other
+ *  extensions and TB itself. I've tried to keep things ordered, like so:
+ *
+ *  1) there are sections, all marked with BEGIN SECTION: <section aim>
+ *  2) each section has sub-sections, all marked with <section aim>: <sub-section purpose>
+ *
+ *  If you stick to this when modifying and supplying patches, it will make everyone's 
+ *  lives easier (:
+ */
+
+/* BEGIN SECTION: Thunderbird application */
+/* Thunderbird: mail notifications */
+#newMailAlertNotification {
+  background-color: Window !important;
+  color: WindowText !important;
+}
+
+
+/* Thunderbird: mailbox summary pane */
+#acctCentralGrid {
+  background-color: Window !important;
+  color: WindowText !important;
+}
+
+#acctCentralHeaderRow {
+  color: WindowText !important;
+  background-color: Window !important;
+}
+
+.acctCentralRow {
+  background-color: Window !important;
+  color: WindowText !important;
+}
+
+.acctCentralLinkText {
+  color: WindowText !important;
+  background-color: Window !important;
+}
+
+.acctCentralLinkText:hover {
+  color: WindowText !important;
+  text-decoration: underline !important;
+}
+
+.acctCentralLinkText:hover:active {
+  color: WindowText !important;
+  font-weight: bold;
+}
+
+/* BEGIN SECTION: Lightning extension */
+/* Lightning: Multiday view */
+calendar-event-column {
+  background-color: ThreeDFace !important;
+}
+
+calendar-event-column[orient="horizontal"] {
+    border-top: 1px solid ActiveBorder !important;
+}
+
+calendar-event-column[orient="vertical"] {
+    border-left: 1px solid ActiveBorder !important;
+}
+
+calendar-header-container {
+    background-color: ButtonFace !important;
+    border-left: 1px solid ActiveBorder !important;
+}
+
+calendar-header-container[weekend="true"],
+.calendar-event-column-linebox[weekend="true"],
+.calendar-event-column-linebox[off-time="true"] {
+    background-color: ButtonHighlight !important;
+}
+
+calendar-header-container[relation="today"],
+.calendar-event-column-linebox[relation="today"],
+calendar-day-label[relation="today"] {
+    background-color: ButtonFace !important;
+    color: ButtonText !important;
+}
+
+calendar-header-container[selected="true"],
+.calendar-event-column-linebox[selected="true"] {
+    background-color: Highlight !important;
+    color: HighlightText !important;
+}
+
+calendar-header-container[weekend="true"][relation="today"],
+.calendar-event-column-linebox[weekend="true"][relation="today"],
+.calendar-event-column-linebox[off-time="true"][relation="today"] {
+    background-color: Window !important;
+    color:  WindowText !important;
+}
+
+calendar-header-container[orient="horizontal"] {
+    border-bottom: 1px solid ThreeDShadow !important;
+}
+
+calendar-header-container[weekend="true"][selected="true"],
+.calendar-event-column-linebox[weekend="true"][selected="true"],
+.calendar-event-column-linebox[off-time="true"][selected="true"] {
+    background-color: ThreeDFace !important;
+}
+
+.calendar-event-column-linebox[orient="horizontal"] {
+  border-right: 1px solid ThreeDLightShadow !important;
+}
+
+.calendar-event-column-linebox[orient="vertical"] {
+    border-bottom: 1px solid #ThreeDShadow !important;
+}
+
+.calendar-header-time-spacer[orient="horizontal"] {
+    border-bottom: 2px solid ThreeDFace !important;
+}
+
+.calendar-header-time-spacer[orient="vertical"] {
+    border-right: 2px solid ThreeDFace !important;
+}
+
+.calendar-header-day-box[orient="horizontal"] {
+    border-right: 1px solid ThreeDShadow !important;
+    border-top: 1px solid ThreeDLightShadow !important;
+    border-bottom: 2px solid ThreeDDarkShadow !important;
+}
+
+.calendar-label-day-box[orient="horizontal"] {
+    border-right: 1px solid ActiveBorder !important;
+}
+.calendar-label-day-box[orient="vertical"] {
+    border-bottom: 1px solid ActiveBorder !important;
+}
+
+.calendar-header-day-box[orient="vertical"] {
+    border-top: 1px solid ActiveBorder !important;
+    border-right: 2px solid ActiveBorder !important;
+}
+
+.calendar-day-box {
+    border-right: 1px solid transparent !important;
+}
+
+.fgdragbox[dragging="true"] {
+    background-color: InactiveBorder !important;
+    color: ButtonText !important;
+    border: 5px ActiveBorder !important;
+}
+
+calendar-event-box {
+    border-left: 1px solid transparent !important;
+    border-top: 1px solid transparent !important;
+    border-right: 1px solid transparent !important;
+    border-bottom: 1px solid ThreeDDarkShadow !important;
+}
+
+calendar-event-box[selected="true"] {
+    border-left: 1px solid transparent !important;
+    border-top: 1px solid ButtonFace !important;
+    border-right: 1px solid transparent !important;
+    border-bottom: 1px solid ThreeDLightShadow !important;
+}
+
+calendar-event-box[selected="true"] .calendar-event-selection {
+    color: ButtonText !important !important;
+    background-color: ButtonFace !important !important;
+}
+
+.calendar-time-bar-box-odd,
+.calendar-time-bar-box-even {
+    color: ButtonText !important;
+    background-color: ButtonFace !important;
+    text-align: right !important;
+    overflow: hidden !important;
+}
+
+.calendar-time-bar-box-odd[off-time="true"] ,
+.calendar-time-bar-box-even[off-time="true"] {
+    background-color: ButtonHighlight !important;
+    border-right: 3px double ActiveBorder !important;
+}
+
+
+.calendar-time-bar-box-odd[orient="horizontal"],
+.calendar-time-bar-box-even[orient="horizontal"] {
+    border-right: 1px solid ActiveBorder !important;
+    border-top: 1px solid ActiveBorder !important;
+
+}
+
+.calendar-time-bar-box-odd[orient="vertical"],
+.calendar-time-bar-box-even[orient="vertical"] {
+    border-bottom: 1px  transparent !important !important;
+    border-right: 3px double ActiveBorder !important;
+}
+
+calendar-multiday-view {
+    background-color: ButtonFace !important;
+    padding: 0px !important;
+}
+
+calendar-day-label {
+    color: ButtonText !important;
+    background-color: ButtonFace !important;
+    background-image: url("chrome://calendar/skin/calendar-day-label-back.png") !important;
+    border-left: 1px solid ActiveBorder !important;
+    border-top: 1px solid ActiveBorder !important;
+}
+
+calendar-day-label[selected="true"] {
+    background-color: Menu !important;
+    color: MenuText !important;
+}
+
+/* Lightning: Month View */
+calendar-month-view {
+    background-color: ButtonFace !important;
+    padding: 2px !important;
+}
+
+.calendar-month-view-grid-row {
+    border-right: 1px solid ActiveBorder !important;
+}
+
+calendar-month-day-box {
+    border-left: 1px solid ActiveBorder !important;
+    border-bottom: 1px solid ActiveBorder !important;
+}
+
+.calendar-month-day-box-current-month {
+    background-color: Buttonface !important;
+    color: WindowText !important;
+}
+.calendar-month-day-box-current-month .calendar-month-day-box-date-label {
+    background-color: Window !important;
+    color: WindowText !important;
+}
+.calendar-month-day-box-day-off {
+    background-color: Window !important;
+    color: WindowText !important;
+}
+.calendar-month-day-box-day-off .calendar-month-day-box-date-label {
+    background-color: Window !important;
+    color: WindowText !important;
+}
+.calendar-month-day-box-other-month {
+    background-color: Window !important;
+    color: WindowText !important;
+}
+.calendar-month-day-box-other-month .calendar-month-day-box-date-label {
+    background-color: Window !important;
+    color: WindowText !important;
+}
+
+.calendar-month-day-box-current-month[relation="today"],
+.calendar-month-day-box-day-off[relation="today"],
+.calendar-month-day-box-other-month[relation="today"],
+.calendar-month-day-box-date-label[relation="today"] {
+    background-color: Window !important;
+    color: WindowText !important;
+}
+
+.calendar-month-day-box-date-label[relation="today"] {
+    background-color: Window !important;
+}
+
+.calendar-month-day-box-current-month[selected="true"],
+.calendar-month-day-box-day-off[selected="true"],
+.calendar-month-day-box-other-month[selected="true"] {
+    background-color: Window !important;
+}
+
+.calendar-month-day-box-date-label[selected="true"] {
+    background-color: Highlight !important;
+    color: HighlightText !important;
+    font-weight: bold !important;
+}
+
+.calendar-month-day-box-date-label {
+    color: WindowText !important;
+    background-color: Window !important;
+}
+
+calendar-month-day-box-item[selected="true"] .calendar-event-selection {
+    color: ButtonText !important !important;
+    background-color: ButtonFace !important !important;
+}
+
+calendar-month-view-column-header {
+    color: ButtonText !important;
+    background-color: ButtonFace !important;
+    background-image: url("chrome://calendar/skin/calendar-day-label-back.png") !important;
+    border-top: 1px solid ActiveBorder !important;
+    border-bottom: 1px solid ActiveBorder !important;
+}
+
+.headerbox-container {
+    border-right: 1px solid ActiveBorder !important;
+}
+
+.calendar-month-view-column-header-container {
+    border-left: 1px solid ActiveBorder !important;
+}
+
+calendar-editable-item[selected="true"] .calendar-event-selection {
+    color: ButtonText !important !important;
+    background-color: ButtonFace !important !important;
+}
+
+box[dropbox="true"] {
+    background-color: Highlight !important !important;
+    color: HighlightText !important;
+}
+
+/* Lightning: Navigation controls for the views */
+calendar-navigation-buttons {
+    background-color: ButtonFace !important;
+    color: ButtonText !important;
+}
+
+.view-header {
+    color: ButtonText !important;
+    background-color: ButtonFace !important;
+}
+
+calendar-event-box,
+calendar-editable-item,
+calendar-month-day-box-item {
+  border: 2px dotted ActiveBorder !important;
+  opacity: 0.99 !important;
+}
+
+calendar-event-box[invitation-status="NEEDS-ACTION"],
+calendar-editable-item[invitation-status="NEEDS-ACTION"],
+calendar-month-day-box-item[invitation-status="NEEDS-ACTION"] {
+  border: 2px dotted ActiveBorder !important;
+  opacity: 0.6 !important;
+}
+
+calendar-event-box[invitation-status="TENTATIVE"],
+calendar-editable-item[invitation-status="TENTATIVE"],
+calendar-month-day-box-item[invitation-status="TENTATIVE"] {
+  border: 2px dotted ActiveBorder !important;
+  opacity: 0.6 !important;
+}
+
+calendar-event-box[invitation-status="DECLINED"],
+calendar-editable-item[invitation-status="DECLINED"],
+calendar-month-day-box-item[invitation-status="DECLINED"] {
+  opacity: 0.3 !important;
+}
+
+/* Lightning: minimonth overrides */
+.minimonth-mainbox {
+  background-color: Window !important;
+  color: WindowText !important;
+}
+
+.minimonth-month-box {
+  background-color: ButtonFace !important;
+  color: ButtonText !important;
+  border: 1px dotted ActiveBorder !important;
+}
+
+.minimonth-day {
+  color: ButtonText !important;
+  border-top: 1px solid ThreeDLightShadow !important;
+  border-bottom: 1px solid ThreeDDarkShadow !important;
+  border-left: 1px solid transparent !important;
+  border-right: 1px solid transparent !important;
+  background-color: ButtonFace !important;
+  min-height: 16px !important;
+}
+
+.minimonth-day[othermonth="true"] {
+  color: WindowText !important;
+  background-color: Window !important;
+  border: 1px solid ActiveBorder !important;
+}
+
+.minimonth-day[today="true"] {
+  background-color: Highlight !important;
+  color: HighlightText !important;
+  border-top: 1px solid ThreeDLightShadow !important;
+  border-bottom: 1px solid ThreeDDarkShadow !important;
+  border-left: 1px solid ThreeDLightShadow !important;
+  border-right: 1px solid ThreeDShadow !important;
+}
+
+.minimonth-day[selected="true"] {
+  background-color: #FFE79C !important;
+  color: #2E4E73 !important;
+  border: 1px solid #D9C585 !important;
+}
+
+/* Lightning: calendar widgets */
+treenode-checkbox {
+  border-bottom: 1px dotted ActiveBorder !important;
+}
+
+/* Lightning: date-time pickers */
+vbox[anonid="time-picker-grids"] {
+  background-color : Window !important;
+}
+
+/* Lightning: calender subscriptions dialog */
+calendar-subscriptions-richlistbox {
+  background-color: Window !important;
+  color: WindowText !important;
+  border: 1px solid ActiveBorder !important;
+}
+
+/* Lightning: calendar invitiations dialog */
+calendar-invitations-richlistbox {
+  background-color: Window !important;
+  color: WindowText !important;
+  border: 1px solid ActiveBorder !important;
+}
+
+calendar-invitations-richlistitem {
+  border-bottom: 1px dotted ActiveBorder !important;
+}
+
+calendar-invitations-richlistitem[selected="true"] {
+  background-color: Window !important;
+  color: WindowText !important;
+  background-image: none !important;
+  border-bottom: 1px dotted InactiveBorder !important;
+}
+
+/* Lightning: calender task view */
+#calendar-task-tree > .calendar-task-tree > treechildren::-moz-tree-row {
+    border-bottom: 1px dotted ActiveBorder; !important
+}
+
+#calendar-task-tree > .calendar-task-tree > treechildren::-moz-tree-cell {
+    border-right: 1px dotted ActiveBorder !important;
+}
+
+/* Lightning: calendar task tree */
+/* MYPREF */
+.calendar-task-tree > treechildren::-moz-tree-cell-text(inprogress) {
+    color: green !important;
+    background-color: Window !important;
+}
+
+/* MYPREF */
+.calendar-task-tree > treechildren::-moz-tree-row(inprogress, selected, focus) {
+    background-color: green !important;
+    background-color: Window !important;
+}
+
+/* MYPREF */
+.calendar-task-tree > treechildren::-moz-tree-cell-text(overdue) {
+    color: red !important;
+    background-color: Window !important;
+}
+
+/* MYPREF */
+.calendar-task-tree > treechildren::-moz-tree-row(overdue, selected, focus) {
+    background-color: red !important;
+    background-color: Window !important;
+}
+
+/* MYPREF */
+.calendar-task-tree > treechildren::-moz-tree-cell-text(duetoday) {
+    color: blue;
+    background-color: Window !important;
+}
+
+/* MYPREF */
+.calendar-task-tree > treechildren::-moz-tree-row(duetoday, selected, focus) {
+    background-color: blue !important;
+    background-color: Window !important;
+}
+
+/* MYPREF */
+.calendar-task-tree > treechildren::-moz-tree-cell-text(future) {
+    color: #9999ee !important;
+    background-color: Window !important;
+}
+
+.calendar-task-tree > treechildren::-moz-tree-row(future, selected, focus) {
+    background-color: Highlight;
+}
+
+.calendar-task-tree > treechildren::-moz-tree-cell-text(completed) {
+    text-decoration: line-through;
+    color: black;
+}
+
+/* Lightning: calendar alarm dialog */
+calendar-alarm-widget {
+  border-bottom: ActiveBorder !important;
+}
+
+calendar-alarm-widget[selected="true"] {
+  background-image: none !important;
+  background-color: Highlight !important;
+  color: HighlightText !important;
+}
+
+#calendar-alram-snooze-popup-window {
+  background-image: none !important;
+  background-color: Menu !important;
+  color: MenuText !important;
+  border: 1px solid ThreeDShadow !important;
+}
+
+/* Lightning: today pane */
+#mini-day-box,
+#today-minimonth-box {
+  background-color: Window !important;
+}
+.agenda-container-box {
+  border-bottom: 1px dotted ActiveBorder !important;
+}
+.agenda-allday-container-box {
+  border-bottom: 1px dotted ActiveBorder !important;
+}
+
+.agenda-container-box[selected="true"],
+.agenda-allday-container-box[selected="true"],
+.agenda-checkbox[selected="true"],
+.agenda-container-box[selected="true"][current="true"],
+.agenda-allday-container-box[selected="true"][current="true"],
+.agenda-checkbox[selected="true"][current="true"] {
+  background-image: none !important !important;
+  background-color: Highlight !important;
+  color: HighlightText !important;
+  border: 1px transparent !important;
+}
+
+.agenda-container-box[current="true"],
+.agenda-alldaycontainer-box[current="true"],
+.agenda-checkbox[current="true"],
+.agenda-container-box[selected="true"][current="true"][disabled="true"],
+.agenda-allday-container-box[selected="true"][current="true"][disabled="true"],
+.agenda-checkbox[selected="true"][current="true"][disabled="true"] {
+  background-image: none !important;
+  background-color: Window !important;
+  color: WindowText !important;
+  border: 1px solid ActiveBorder !important;
+}
+
+.agenda-container-box[selected="true"][disabled="true"],
+.agenda-allday-container-box[selected="true"][disabled="true"],
+.agenda-checkbox[selected="true"][disabled="true"] {
+  background-image: none !important;
+  background-color: InactiveCaption !important;
+  color: InactiveCaptionText !important;
+}
+
+/* BEGIN SECTION: XNote extension */
+/* XNote: note window */
+#note {
+  background-color: Window !important;
+  background-image: none !important;
+  border: 1px solid ActiveBorder !important;
+  width: 120px !important;
+  height: 80px !important;
+}
+
+#barre {
+  background-image: none !important;;
+  background-color: ButtonFace !important;
+  color: ButtonText !important;
+  border-bottom: 1px solid ActiveBorder !important;
+}
+
+#redim {
+  cursor: se-resize !important;
+  background-image: none !important;
+  background-color: Window !important;
+  border-right: 1px solid Highlight !important;
+  border-bottom: 1px solid Highlight !important;
+}
+
+#xnote-window {
+  width: 120px !important;
+  height: 80px !important;
+}
+
