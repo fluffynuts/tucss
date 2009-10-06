@@ -1,0 +1,20 @@
+font {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  color: inherit !important;
+  background-color: inherit !important;
+}
+
+body,p,span,div,table,td {
+  color: WindowText !important;
+  background-color: Window !important;
+}
+
+input, select, textarea {
+  color: ButtonText !important;
+  background-color: ButtonFace !important;
+}
+
+img {
+  moz-do-not-send: false !important;
+}

@@ -1,5 +1,5 @@
 /*
- *  TUCSS: Thunderbird Useability CSS
+ *  TUCSS: Thunderbird Usability CSS
  *  
  *  The purpose of this mess of CSS is to provide a consistent user interface
  *  for the desktop user. For many years now, different operating systems have
@@ -82,6 +82,11 @@
 
 /* BEGIN SECTION: Lightning extension */
 /* Lightning: Multiday view */
+lightning-notification-bar {
+  background-color: Highlight !important;
+  color: HighlightText !important;
+}
+
 calendar-event-column {
   background-color: ThreeDFace !important;
 }
